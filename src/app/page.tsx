@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Home as HomeIcon, Users, Briefcase, BookOpen, MapPin, Phone, Mail, Menu } from "lucide-react";
 import Image from "next/image";
 import LegalGlossary from "@/components/legal-glossary";
+import ConceptExplainer from "@/components/concept-explainer";
 import { ContactForm } from "@/components/contact-form";
 
 function ScaleIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -53,6 +54,7 @@ export default function Home() {
             <a href="#about" className="hover:text-primary transition-colors">À Propos</a>
             <a href="#services" className="hover:text-primary transition-colors">Services</a>
             <a href="#glossary" className="hover:text-primary transition-colors">Glossaire</a>
+            <a href="#explainer" className="hover:text-primary transition-colors">Explication</a>
             <Button asChild>
                 <a href="#contact">Contact</a>
             </Button>
@@ -147,7 +149,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="py-20 md:py-32 bg-card">
+        <section id="explainer" className="py-20 md:py-32 bg-card">
+          <div className="container mx-auto px-4 md:px-6">
+            <ConceptExplainer />
+          </div>
+        </section>
+
+        <section id="contact" className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-16">
               <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">Contactez l'Étude</h2>
