@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Briefcase, Building, Family, HandCoins, Home, Landmark, ShieldQuestion } from "lucide-react";
+import { Briefcase, HandCoins, Home, ShieldQuestion, Users } from "lucide-react";
 
 const services = [
   {
@@ -43,7 +43,7 @@ const services = [
   {
     value: "droit-famille",
     title: "Droit de la Famille",
-    icon: <Family className="h-6 w-6 mr-4 text-primary" />,
+    icon: <Users className="h-6 w-6 mr-4 text-primary" />,
     categories: [
       {
         title: "Union et Mariage",
