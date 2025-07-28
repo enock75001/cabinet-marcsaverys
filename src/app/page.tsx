@@ -1,29 +1,47 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Home, Users, Briefcase, BookOpen, MapPin, Phone, Mail, Clock, Scale, ArrowRight } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Briefcase, Building, GraduationCap, Handshake, Heart, MapPin, Phone, Scale, ShieldCheck, Users } from "lucide-react";
 import Image from "next/image";
 
 export default function HomePage() {
-  const services = [
+
+  const values = [
     {
-      icon: <Home className="h-8 w-8 text-accent" />,
-      title: "Droit Immobilier",
-      description: "Accompagnement pour l'achat, la vente, et le financement de vos biens immobiliers.",
+      icon: <Scale className="h-8 w-8 text-primary" />,
+      title: "Rigueur",
+      description: "Une approche méthodique et précise pour chaque dossier.",
     },
     {
-      icon: <Users className="h-8 w-8 text-accent" />,
-      title: "Droit de la Famille",
-      description: "Contrats de mariage, PACS, donations, adoptions et protection des proches.",
+      icon: <Handshake className="h-8 w-8 text-primary" />,
+      title: "Disponibilité",
+      description: "Une écoute attentive et un accompagnement personnalisé.",
     },
     {
-      icon: <Briefcase className="h-8 w-8 text-accent" />,
-      title: "Droit des Sociétés",
-      description: "Création, transmission ou cession de votre entreprise et gestion de patrimoine.",
+      icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+      title: "Confiance",
+      description: "Une relation durable basée sur la transparence et l'intégrité.",
+    },
+  ];
+
+  const team = [
+    {
+      name: "Marie Dupont",
+      role: "Clerc principal",
+      description: "Spécialiste en droit immobilier avec 15 ans d'expérience",
+      avatar: "MD",
     },
     {
-      icon: <BookOpen className="h-8 w-8 text-accent" />,
-      title: "Successions",
-      description: "Planification successorale, testaments, et règlement des successions.",
+      name: "Pierre Martin",
+      role: "Clerc senior",
+      description: "Expert en droit des successions et fiscalité",
+      avatar: "PM",
+    },
+    {
+      name: "Sophie Leroy",
+      role: "Assistante juridique",
+      description: "Gestion des formalités et suivi clientèle",
+      avatar: "SL",
     }
   ];
 
@@ -40,129 +58,215 @@ export default function HomePage() {
             </div>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <a href="#services" className="hover:text-primary transition-colors">Nos services</a>
-            <a href="#engagement" className="hover:text-primary transition-colors">Notre engagement</a>
+            <a href="#about" className="hover:text-primary transition-colors">À propos</a>
+            <a href="#services" className="hover:text-primary transition-colors">Services</a>
+            <a href="#team" className="hover:text-primary transition-colors">L'équipe</a>
             <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
           </nav>
-          <Button asChild className="hidden md:flex">
-            <a href="#contact">Prendre rendez-vous</a>
-          </Button>
         </div>
       </header>
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-white">
-          <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 items-center gap-12 py-20 md:py-32">
-            <div className="space-y-6">
-              <h2 className="font-headline text-4xl md:text-6xl font-bold tracking-tight text-primary leading-tight">
-                L'art du notariat, la sécurité de vos projets.
+        <section id="about" className="py-20 md:py-32">
+          <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-3 gap-12 items-center">
+            <div className="md:col-span-2 space-y-6">
+              <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight text-primary">
+                Votre partenaire juridique pour la vie.
               </h2>
-              <p className="max-w-xl text-lg text-muted-foreground">
-                Maître Marc Saverys vous accompagne avec rigueur et bienveillance dans les moments clés de votre vie. Notre expertise est le gage de la sécurité juridique de vos actes.
-              </p>
-              <div className="flex gap-4">
-                <Button asChild size="lg">
-                  <a href="#services">Découvrir nos services <ArrowRight className="ml-2" /></a>
-                </Button>
+              <div className="space-y-4 text-lg text-muted-foreground">
+                <p>
+                  Avec plus de 15 ans d'expérience, j'ai fondé mon étude sur des valeurs de rigueur, de disponibilité et de confiance.
+                </p>
+                <p>
+                  Notre mission est de vous offrir une sécurité juridique optimale en vous fournissant des conseils éclairés et en rédigeant des actes authentiques incontestables, adaptés à chaque situation personnelle et professionnelle.
+                </p>
               </div>
             </div>
-             <div className="relative h-64 md:h-full w-full rounded-lg overflow-hidden shadow-2xl">
-                <Image src="https://placehold.co/600x800.png" alt="Illustration bureau notaire" layout="fill" objectFit="cover" data-ai-hint="office desk" />
+            <div className="relative h-64 w-full md:h-80 rounded-lg overflow-hidden shadow-lg">
+              <Image src="https://placehold.co/400x500.png" alt="Maître Marc Saverys" layout="fill" objectFit="cover" data-ai-hint="portrait professional" />
+            </div>
+          </div>
+        </section>
+        
+        {/* Values Section */}
+        <section id="values" className="py-20 md:py-24 bg-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {values.map((value) => (
+                <div key={value.title} className="flex items-start gap-6">
+                  <div className="bg-primary/10 p-3 rounded-full">{value.icon}</div>
+                  <div>
+                    <h3 className="font-headline text-2xl font-semibold text-primary">{value.title}</h3>
+                    <p className="text-muted-foreground mt-1">{value.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
+
         {/* Services Section */}
         <section id="services" className="py-20 md:py-32">
+          <div className="container mx-auto px-4 md:px-6 text-center">
+            <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight mb-16">Nos Domaines d'Expertise</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <Card className="text-center bg-white p-6 shadow-sm hover:shadow-lg transition-shadow">
+                <CardHeader className="items-center p-0"><Building className="h-10 w-10 text-accent mb-4"/></CardHeader>
+                <CardTitle className="font-headline text-xl text-primary">Droit Immobilier</CardTitle>
+              </Card>
+               <Card className="text-center bg-white p-6 shadow-sm hover:shadow-lg transition-shadow">
+                <CardHeader className="items-center p-0"><Heart className="h-10 w-10 text-accent mb-4"/></CardHeader>
+                <CardTitle className="font-headline text-xl text-primary">Droit de la Famille</CardTitle>
+              </Card>
+               <Card className="text-center bg-white p-6 shadow-sm hover:shadow-lg transition-shadow">
+                <CardHeader className="items-center p-0"><Briefcase className="h-10 w-10 text-accent mb-4"/></CardHeader>
+                <CardTitle className="font-headline text-xl text-primary">Droit des Affaires</CardTitle>
+              </Card>
+               <Card className="text-center bg-white p-6 shadow-sm hover:shadow-lg transition-shadow">
+                <CardHeader className="items-center p-0"><Users className="h-10 w-10 text-accent mb-4"/></CardHeader>
+                <CardTitle className="font-headline text-xl text-primary">Successions</CardTitle>
+              </Card>
+            </div>
+          </div>
+        </section>
+        
+        {/* Journey & Education Section */}
+        <section id="journey" className="py-20 md:py-32 bg-white">
           <div className="container mx-auto px-4 md:px-6">
+            <div className="grid md:grid-cols-2 gap-16">
+              <div>
+                <h2 className="font-headline text-3xl font-bold tracking-tight mb-8">Parcours Professionnel</h2>
+                <div className="space-y-8 border-l-2 border-primary pl-8">
+                  <div className="relative">
+                     <div className="absolute -left-10 h-4 w-4 bg-primary rounded-full top-1"></div>
+                    <p className="font-semibold text-primary">2009 - Aujourd'hui</p>
+                    <h3 className="text-xl font-bold mt-1">Notaire titulaire</h3>
+                    <p className="text-muted-foreground mt-2">Installation de l'étude notariale à Jeu-les-Bois. Développement d'une approche centrée sur la rigueur, la disponibilité et la confiance. Spécialisation dans l'accompagnement juridique personnalisé.</p>
+                  </div>
+                   <div className="relative">
+                    <div className="absolute -left-10 h-4 w-4 bg-primary rounded-full top-1"></div>
+                    <p className="font-semibold text-primary">2005 - 2009</p>
+                    <h3 className="text-xl font-bold mt-1">Clerc de notaire principal</h3>
+                    <p className="text-muted-foreground mt-2">Expérience en tant que clerc principal dans une étude notariale de la région Centre. Acquisition d'une expertise solide dans tous les domaines du droit notarial.</p>
+                  </div>
+                </div>
+              </div>
+               <div>
+                <h2 className="font-headline text-3xl font-bold tracking-tight mb-8">Formation</h2>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <GraduationCap className="h-6 w-6 text-primary mt-1 shrink-0"/>
+                    <div>
+                      <h3 className="font-semibold text-lg">Diplôme Supérieur du Notariat</h3>
+                      <p className="text-muted-foreground">Institut des Métiers du Notariat de Paris - 1995</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <GraduationCap className="h-6 w-6 text-primary mt-1 shrink-0"/>
+                    <div>
+                      <h3 className="font-semibold text-lg">DESS Droit Notarial</h3>
+                      <p className="text-muted-foreground">Université Paris II Panthéon-Assas - 1993</p>
+                    </div>
+                  </div>
+                   <div className="flex items-start gap-4">
+                    <GraduationCap className="h-6 w-6 text-primary mt-1 shrink-0"/>
+                    <div>
+                      <h3 className="font-semibold text-lg">Maîtrise en Droit</h3>
+                      <p className="text-muted-foreground">Université Paris II Panthéon-Assas - 1992</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Team Section */}
+        <section id="team" className="py-20 md:py-32">
+           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-16">
-              <h3 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">Nos Domaines d'Expertise</h3>
+              <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">Notre Équipe</h2>
               <p className="max-w-3xl mx-auto text-lg text-muted-foreground">
-                Une expertise complète pour vous accompagner à chaque étape, avec clarté et sécurité.
+                Des experts dévoués à votre service pour vous garantir un accompagnement de qualité.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {services.map((service, index) => (
-                <Card key={index} className="text-left bg-white p-6 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col items-start">
-                  <div className="bg-accent/10 p-3 rounded-full mb-4">{service.icon}</div>
-                  <CardHeader className="p-0">
-                    <CardTitle className="font-headline text-xl text-primary">{service.title}</CardTitle>
-                  </CardHeader>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {team.map((member) => (
+                <Card key={member.name} className="bg-white p-6 shadow-sm text-center">
+                  <Avatar className="w-24 h-24 mx-auto mb-4 border-4 border-primary/20">
+                    <AvatarImage src={`https://placehold.co/100x100.png`} alt={member.name} data-ai-hint="portrait professional" />
+                    <AvatarFallback>{member.avatar}</AvatarFallback>
+                  </Avatar>
+                  <CardTitle className="text-xl font-headline text-primary">{member.name}</CardTitle>
+                  <p className="text-accent font-semibold mt-1">{member.role}</p>
                   <CardContent className="p-0 mt-3">
-                    <p className="text-muted-foreground">{service.description}</p>
+                    <p className="text-muted-foreground">{member.description}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </div>
         </section>
-
-        {/* About/Engagement Section */}
-        <section id="engagement" className="py-20 md:py-32 bg-white">
+        
+        {/* Commitments Section */}
+        <section className="py-20 md:py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
-               <h3 className="font-headline text-3xl md:text-4xl font-bold tracking-tight text-primary">
-                  Notre Engagement
-                </h3>
-                <p className="text-lg text-muted-foreground">
-                  Membre de la Chambre des Notaires de l'Indre, l'étude de Maître Marc Saverys s'engage à fournir un service notarial de proximité, alliant rigueur juridique et écoute attentive. Notre mission est de vous offrir des solutions claires et sécurisées pour tous vos projets personnels et professionnels.
-                </p>
-                 <p className="text-lg text-muted-foreground">
-                  Nous privilégions une relation de confiance et de transparence, en rendant le droit accessible pour vous accompagner dans la durée. La déontologie, la confidentialité et votre satisfaction sont au cœur de nos préoccupations.
-                </p>
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">Engagements Professionnels</h2>
+            </div>
+            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <h3 className="text-lg font-semibold text-primary">Chambre des Notaires de Paris</h3>
+                    <p className="text-muted-foreground">Membre actif depuis 2003</p>
+                </div>
+                <div>
+                    <h3 className="text-lg font-semibold text-primary">Formation Continue</h3>
+                    <p className="text-muted-foreground">Intervenant régulier dans les formations professionnelles</p>
+                </div>
+                <div>
+                    <h3 className="text-lg font-semibold text-primary">Conseil Supérieur du Notariat</h3>
+                    <p className="text-muted-foreground">Participation aux groupes de travail</p>
+                </div>
             </div>
           </div>
         </section>
 
+
         {/* Contact Section */}
-        <section id="contact" className="py-20 md:py-32">
+        <section id="contact" className="py-20 md:py-32 bg-primary/5">
           <div className="container mx-auto px-4 md:px-6">
-             <div className="text-center space-y-4 mb-16">
-              <h3 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">Contact & Horaires</h3>
-              <p className="max-w-3xl mx-auto text-lg text-muted-foreground">
-                Contactez-nous pour prendre rendez-vous. L'étude est à votre disposition.
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">Contactez-nous</h2>
+              <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
+                Nous sommes à votre disposition pour toute question ou pour prendre rendez-vous.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <Card className="p-6 bg-white shadow-sm">
-                <CardHeader className="p-0 items-center">
-                   <div className="bg-primary/10 p-3 rounded-full mb-2"><MapPin className="h-6 w-6 text-primary" /></div>
-                  <CardTitle>Adresse</CardTitle>
-                </CardHeader>
-                <CardContent className="p-0 mt-2">
-                  <p className="text-muted-foreground">36120 Jeu-les-Bois, France</p>
-                   <Button variant="link" asChild className="p-0 h-auto mt-1 text-accent">
-                      <a href="https://www.google.com/maps/search/?api=1&query=36120+Jeu-les-Bois,France" target="_blank" rel="noopener noreferrer">
-                        Voir sur la carte
-                      </a>
-                    </Button>
-                </CardContent>
-              </Card>
-               <Card className="p-6 bg-white shadow-sm">
-                <CardHeader className="p-0 items-center">
-                  <div className="bg-primary/10 p-3 rounded-full mb-2"><Phone className="h-6 w-6 text-primary" /></div>
-                  <CardTitle>Contact</CardTitle>
-                </CardHeader>
-                <CardContent className="p-0 mt-2">
-                  <p className="text-muted-foreground">+33 7 74 43 56 93</p>
-                  <p className="text-muted-foreground">procureurjustice44@gmail.com</p>
-                </CardContent>
-              </Card>
-              <Card className="p-6 bg-white shadow-sm">
-                <CardHeader className="p-0 items-center">
-                   <div className="bg-primary/10 p-3 rounded-full mb-2"><Clock className="h-6 w-6 text-primary" /></div>
-                  <CardTitle>Horaires</CardTitle>
-                </CardHeader>
-                <CardContent className="p-0 mt-2">
-                  <ul className="text-muted-foreground">
-                      <li>Lundi - Vendredi: 9h00 - 18h00</li>
-                      <li>Samedi: 9h00 - 12h00</li>
-                      <li>Dimanche: Fermé</li>
-                      <li className="text-sm mt-2 font-semibold">Sur rendez-vous uniquement.</li>
-                    </ul>
-                </CardContent>
-              </Card>
+            <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+              <div className="flex items-start gap-4">
+                 <MapPin className="h-8 w-8 text-primary mt-1 shrink-0"/>
+                 <div>
+                    <h3 className="font-semibold text-lg">Adresse</h3>
+                    <p className="text-muted-foreground">36120 Jeu-les-Bois, France</p>
+                 </div>
+              </div>
+              <div className="flex items-start gap-4">
+                 <Phone className="h-8 w-8 text-primary mt-1 shrink-0"/>
+                 <div>
+                    <h3 className="font-semibold text-lg">Téléphone & E-mail</h3>
+                    <p className="text-muted-foreground">+33 7 74 43 56 93</p>
+                    <p className="text-muted-foreground">procureurjustice44@gmail.com</p>
+                 </div>
+              </div>
+              <div className="flex items-start gap-4">
+                 <Scale className="h-8 w-8 text-primary mt-1 shrink-0"/>
+                 <div>
+                    <h3 className="font-semibold text-lg">Horaires</h3>
+                    <p className="text-muted-foreground">Lundi - Vendredi: 9h00 - 18h00</p>
+                    <p className="text-muted-foreground">Samedi: 9h00 - 12h00 (sur rdv)</p>
+                 </div>
+              </div>
             </div>
           </div>
         </section>
@@ -170,8 +274,12 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="bg-white border-t">
-        <div className="container mx-auto px-4 md:px-6 py-6 text-center text-muted-foreground text-sm">
+        <div className="container mx-auto px-4 md:px-6 py-6 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
             <p>&copy; {new Date().getFullYear()} Étude Notariale Maître Marc Saverys. Tous droits réservés.</p>
+            <div className="flex gap-4 mt-4 sm:mt-0">
+              <a href="#" className="hover:text-primary">Mentions légales</a>
+              <a href="#" className="hover:text-primary">Politique de confidentialité</a>
+            </div>
         </div>
       </footer>
     </div>
