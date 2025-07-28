@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Home, Users, Briefcase, BookOpen, MapPin, Phone, Mail, Menu } from "lucide-react";
+import { Home, Users, Briefcase, BookOpen, MapPin, Phone, Mail, Menu, Clock } from "lucide-react";
 import Image from "next/image";
 import ConceptExplainer from "@/components/concept-explainer";
 import { ContactForm } from "@/components/contact-form";
@@ -48,7 +48,7 @@ export default function HomePage() {
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <a href="#" className="flex items-center gap-3">
             <ScaleIcon className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold text-primary font-headline tracking-tight">Maître Marc Saverys</span>
+            <span className="text-2xl font-bold text-primary font-headline tracking-tight">Étude Notariale</span>
           </a>
           <nav className="hidden md:flex gap-6 text-base font-medium items-center">
             <a href="#about" className="hover:text-primary transition-colors">À Propos</a>
@@ -109,7 +109,10 @@ export default function HomePage() {
                   Maître Marc Saverys
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Fort d'une solide expérience et d'une expertise reconnue, Maître Marc Saverys a fondé son étude avec la conviction que chaque client mérite une écoute attentive et des solutions juridiques sur-mesure. Diplômé de l'Université Panthéon-Sorbonne, il s'engage à offrir un service de haute qualité, alliant tradition notariale et approches modernes.
+                  Membre de la Chambre des Notaires de l'Indre
+                </p>
+                <p className="text-lg text-muted-foreground">
+                  Fort d'une solide expérience et d'une expertise reconnue, Maître Marc Saverys a fondé son étude avec la conviction que chaque client mérite une écoute attentive et des solutions juridiques sur-mesure. Il s'engage à offrir un service de haute qualité, alliant tradition notariale et approches modernes.
                 </p>
                 <p className="text-lg text-muted-foreground">
                   Sa pratique est guidée par les valeurs de rigueur, de transparence et de proactivité. Il met un point d'honneur à rendre le droit accessible et à construire des relations de confiance durables avec ses clients, les accompagnant à chaque étape clé de leur vie personnelle et professionnelle.
@@ -172,9 +175,9 @@ export default function HomePage() {
                   <div className="bg-primary/10 p-3 rounded-full"><MapPin className="h-6 w-6 text-primary" /></div>
                   <div>
                     <h3 className="font-semibold text-xl">Adresse de l'étude</h3>
-                    <p className="text-muted-foreground">123 Rue du Droit, 75001 Paris, France</p>
+                    <p className="text-muted-foreground">36120 Jeu-les-Bois, France</p>
                     <Button variant="link" asChild className="p-0 h-auto mt-2 text-accent hover:text-accent/90">
-                      <a href="https://www.google.com/maps/search/?api=1&query=123+Rue+du+Droit,75001+Paris,France" target="_blank" rel="noopener noreferrer">
+                      <a href="https://www.google.com/maps/search/?api=1&query=36120+Jeu-les-Bois,France" target="_blank" rel="noopener noreferrer">
                         Voir sur la carte
                       </a>
                     </Button>
@@ -184,14 +187,26 @@ export default function HomePage() {
                    <div className="bg-primary/10 p-3 rounded-full"><Phone className="h-6 w-6 text-primary" /></div>
                   <div>
                     <h3 className="font-semibold text-xl">Téléphone</h3>
-                    <p className="text-muted-foreground">+33 1 23 45 67 89</p>
+                    <p className="text-muted-foreground">+33 7 74 43 56 93</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                    <div className="bg-primary/10 p-3 rounded-full"><Mail className="h-6 w-6 text-primary" /></div>
                   <div>
                     <h3 className="font-semibold text-xl">Email</h3>
-                    <p className="text-muted-foreground">contact@saverys-notaire.fr</p>
+                    <p className="text-muted-foreground">procureurjustice44@gmail.com</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full"><Clock className="h-6 w-6 text-primary" /></div>
+                  <div>
+                    <h3 className="font-semibold text-xl">Horaires</h3>
+                    <ul className="text-muted-foreground">
+                      <li>Lundi - Vendredi: 9h00 - 18h00</li>
+                      <li>Samedi: 9h00 - 12h00</li>
+                      <li>Dimanche: Fermé</li>
+                    </ul>
+                    <p className="text-sm text-muted-foreground mt-2">Rendez-vous sur rendez-vous uniquement.</p>
                   </div>
                 </div>
               </div>
@@ -202,8 +217,8 @@ export default function HomePage() {
 
       <footer className="bg-primary text-primary-foreground py-8">
         <div className="container mx-auto px-4 md:px-6 text-center">
-            <p>&copy; {new Date().getFullYear()} Maître Marc Saverys. Tous droits réservés.</p>
-            <p className="text-sm text-primary-foreground/70 mt-2">123 Rue du Droit, 75001 Paris, France</p>
+            <p>&copy; {new Date().getFullYear()} Étude Notariale Maître Marc Saverys. Tous droits réservés.</p>
+            <p className="text-sm text-primary-foreground/70 mt-2">36120 Jeu-les-Bois, France</p>
         </div>
       </footer>
     </div>

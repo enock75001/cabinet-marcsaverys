@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Saverys Notaire',
-  description: 'Maître Marc Saverys, notaire privé. Services de notariat en immobilier, héritage, et plus.',
+  title: 'Étude Notariale Maître Marc Saverys',
+  description: 'Étude notariale de Maître Marc Saverys, notaire à Jeu-les-Bois. Services de notariat en immobilier, famille, sociétés et successions.',
 };
 
 export default function RootLayout({
