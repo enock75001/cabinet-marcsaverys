@@ -57,7 +57,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1 h-full">
-                <Card className="h-full flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <Card className="h-full flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow duration-300 bg-background">
                   <CardContent className="p-6 flex flex-col items-center text-center">
                     <Avatar className="mb-4 h-16 w-16">
                        <AvatarImage src={`https://placehold.co/64x64/E2E8F0/475569.png?text=${testimonial.avatar}`} alt={testimonial.name} />

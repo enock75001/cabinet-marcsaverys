@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Home as HomeIcon, Users, Briefcase, BookOpen, MapPin, Phone, Mail, Menu, Star, MessageSquare } from "lucide-react";
+import { Home, Users, Briefcase, BookOpen, MapPin, Phone, Mail, Menu } from "lucide-react";
 import Image from "next/image";
 import ConceptExplainer from "@/components/concept-explainer";
 import { ContactForm } from "@/components/contact-form";
@@ -18,10 +18,10 @@ function ScaleIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default function Home() {
+export default function HomePage() {
   const services = [
     {
-      icon: <HomeIcon className="h-8 w-8 text-accent" />,
+      icon: <Home className="h-8 w-8 text-accent" />,
       title: "Droit Immobilier",
       description: "Accompagnement complet pour l'achat, la vente, le financement et la gestion de vos biens immobiliers.",
     },
@@ -55,7 +55,7 @@ export default function Home() {
             <a href="#services" className="hover:text-primary transition-colors">Services</a>
             <a href="#testimonials" className="hover:text-primary transition-colors">Témoignages</a>
             <a href="#explainer" className="hover:text-primary transition-colors">Explication</a>
-            <Button asChild>
+            <Button asChild variant="outline">
                 <a href="#contact">Contact</a>
             </Button>
           </nav>
@@ -68,7 +68,7 @@ export default function Home() {
 
       <main className="flex-1">
         <section className="relative w-full h-[70vh] flex items-center justify-center text-center text-primary-foreground">
-          <div className="absolute inset-0 bg-primary">
+          <div className="absolute inset-0 bg-primary/90">
             <Image
               src="https://placehold.co/1920x1080.png"
               alt="Intérieur d'un bureau juridique moderne"
@@ -91,10 +91,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="py-20 md:py-32 bg-background">
+        <section id="about" className="py-20 md:py-32 bg-card">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-              <div className="rounded-lg overflow-hidden shadow-2xl">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
+              <div className="rounded-lg overflow-hidden shadow-2xl order-last md:order-first">
                 <Image
                   src="https://placehold.co/600x700.png"
                   alt="Portrait de Maître Marc Saverys"
@@ -119,7 +119,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="services" className="py-20 md:py-32 bg-card">
+        <section id="services" className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-16">
               <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">Nos Domaines d'Expertise</h2>
@@ -129,7 +129,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service, index) => (
-                <Card key={index} className="bg-background text-center p-8 flex flex-col items-center shadow-lg hover:shadow-2xl transition-shadow duration-300 border-t-4 border-accent">
+                <Card key={index} className="bg-card text-center p-8 flex flex-col items-center shadow-lg hover:shadow-2xl transition-shadow duration-300 border-t-4 border-accent">
                   <div className="mb-4">{service.icon}</div>
                   <CardHeader className="p-0">
                     <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
@@ -143,19 +143,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="testimonials" className="py-20 md:py-32 bg-background">
+        <section id="testimonials" className="py-20 md:py-32 bg-card">
           <div className="container mx-auto px-4 md:px-6">
             <Testimonials />
           </div>
         </section>
 
-        <section id="explainer" className="py-20 md:py-32 bg-card">
+        <section id="explainer" className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4 md:px-6">
             <ConceptExplainer />
           </div>
         </section>
 
-        <section id="contact" className="py-20 md:py-32 bg-background">
+        <section id="contact" className="py-20 md:py-32 bg-primary/5">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-16">
               <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">Contactez l'Étude</h2>
@@ -164,7 +164,7 @@ export default function Home() {
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-12 md:gap-16">
-              <Card className="p-8 shadow-lg bg-background">
+              <Card className="p-8 shadow-lg bg-card">
                 <ContactForm />
               </Card>
               <div className="space-y-8 flex flex-col justify-center">

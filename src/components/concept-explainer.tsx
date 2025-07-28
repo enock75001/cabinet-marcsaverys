@@ -80,7 +80,7 @@ export default function ConceptExplainer() {
         )}
 
         {result && (
-          <Card className="animate-in fade-in-50 shadow-lg">
+          <Card className="animate-in fade-in-50 shadow-lg bg-card">
             <CardHeader>
               <CardTitle className="font-headline text-2xl text-primary">Explication de : {displayConcept}</CardTitle>
             </CardHeader>
