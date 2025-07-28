@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Home as HomeIcon, Users, Briefcase, BookOpen, MapPin, Phone, Mail, Menu } from "lucide-react";
+import { Home as HomeIcon, Users, Briefcase, BookOpen, MapPin, Phone, Mail, Menu, Star, MessageSquare } from "lucide-react";
 import Image from "next/image";
-import LegalGlossary from "@/components/legal-glossary";
 import ConceptExplainer from "@/components/concept-explainer";
 import { ContactForm } from "@/components/contact-form";
+import Testimonials from "@/components/testimonials";
 
 function ScaleIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="m16 16 3-8 3 8c-2 1-4 1-6 0" />
       <path d="m2 16 3-8 3 8c-2 1-4 1-6 0" />
       <path d="M7 21h10" />
@@ -53,7 +53,7 @@ export default function Home() {
           <nav className="hidden md:flex gap-6 text-base font-medium items-center">
             <a href="#about" className="hover:text-primary transition-colors">À Propos</a>
             <a href="#services" className="hover:text-primary transition-colors">Services</a>
-            <a href="#glossary" className="hover:text-primary transition-colors">Glossaire</a>
+            <a href="#testimonials" className="hover:text-primary transition-colors">Témoignages</a>
             <a href="#explainer" className="hover:text-primary transition-colors">Explication</a>
             <Button asChild>
                 <a href="#contact">Contact</a>
@@ -143,9 +143,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="glossary" className="py-20 md:py-32 bg-background">
+        <section id="testimonials" className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4 md:px-6">
-            <LegalGlossary />
+            <Testimonials />
           </div>
         </section>
 
