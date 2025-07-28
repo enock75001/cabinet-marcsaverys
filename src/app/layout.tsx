@@ -31,11 +31,11 @@ export default function RootLayout({
             <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
               <a href="/" className="hover:text-primary transition-colors">Accueil</a>
               <a href="/services" className="hover:text-primary transition-colors">Services</a>
-              <a href="/#about" className="hover:text-primary transition-colors">À propos</a>
-              <a href="/#contact" className="hover:text-primary transition-colors">Contact</a>
+              <a href="/about" className="hover:text-primary transition-colors">À propos</a>
+              <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
             </nav>
             <Button asChild className="hidden md:flex">
-              <a href="/#contact">Prendre RDV</a>
+              <a href="#contact">Prendre RDV</a>
             </Button>
           </div>
         </header>
