@@ -61,7 +61,7 @@ export default function AboutPage() {
                <p className="text-lg font-semibold text-primary">Votre partenaire juridique pour la vie.</p>
             </div>
             <div className="relative h-96 w-full rounded-lg overflow-hidden shadow-2xl">
-              <Image src="https://placehold.co/600x800.png" alt="Bureau de notaire" layout="fill" objectFit="cover" data-ai-hint="law office interior" />
+              <Image src="https://i.postimg.cc/Ghd7PNWJ/notary-office.png" alt="Bureau de notaire" layout="fill" objectFit="cover" />
             </div>
           </div>
         </div>
@@ -163,7 +163,7 @@ export default function AboutPage() {
             {team.map((member) => (
               <Card key={member.name} className="bg-card border-border/60 text-center flex flex-col items-center p-6">
                 <Avatar className="w-24 h-24 mb-4">
-                  <AvatarImage src={`https://placehold.co/100x100.png`} data-ai-hint="professional headshot" />
+                  <AvatarImage src={`https://i.postimg.cc/Ghd7PNWJ/notary-office.png`} />
                   <AvatarFallback>{member.initials}</AvatarFallback>
                 </Avatar>
                 <CardHeader className="p-0">

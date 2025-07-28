@@ -185,7 +185,7 @@ export default function ContactPage() {
                 <div>
                     <h3 className="text-xl font-bold font-display mb-4">Notre localisation</h3>
                     <div className="relative h-64 w-full rounded-lg overflow-hidden border">
-                         <Image src="https://placehold.co/600x400.png" alt="Carte de localisation" layout="fill" objectFit="cover" data-ai-hint="map location" />
+                         <Image src="https://i.postimg.cc/Ghd7PNWJ/notary-office.png" alt="Carte de localisation" layout="fill" objectFit="cover" />
                     </div>
                      <div className="grid grid-cols-2 gap-4 mt-4 text-muted-foreground text-sm">
                         <div className="flex items-start"><Car className="h-5 w-5 mr-3 mt-1 text-primary shrink-0" /><div><b>Accès et Transport :</b><br/>Accès facile par la D925. Stationnement gratuit sur place.</div></div>

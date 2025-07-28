@@ -73,7 +73,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="relative h-96 w-full rounded-lg overflow-hidden shadow-2xl group">
-                 <Image src="https://placehold.co/600x800.png" alt="Portrait de Maître Marc Saverys" layout="fill" objectFit="cover" data-ai-hint="lawyer portrait" className="group-hover:scale-105 transition-transform duration-500" />
+                 <Image src="https://i.postimg.cc/Ghd7PNWJ/notary-office.png" alt="Portrait de Maître Marc Saverys" layout="fill" objectFit="cover" className="group-hover:scale-105 transition-transform duration-500" />
                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
               </div>
             </div>
