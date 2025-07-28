@@ -12,6 +12,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Phone, Mail, MapPin, Clock, Car, Building } from 'lucide-react';
 import Image from 'next/image';
+import { useToast } from "@/hooks/use-toast";
+import { sendEmail } from "./actions";
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Le nom est requis."),
@@ -23,6 +26,8 @@ const formSchema = z.object({
 });
 
 export default function ContactPage() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,9 +40,24 @@ export default function ContactPage() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // Ici, vous intégreriez la logique d'envoi d'email
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+    try {
+      await sendEmail(values);
+      toast({
+        title: "Message envoyé !",
+        description: "Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.",
+      });
+      form.reset();
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Erreur",
+        description: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -156,7 +176,9 @@ export default function ContactPage() {
                             </FormItem>
                         )}
                         />
-                    <Button type="submit">Envoyer le message</Button>
+                    <Button type="submit" disabled={isSubmitting}>
+                      {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
+                    </Button>
                   </form>
                 </Form>
               </CardContent>
