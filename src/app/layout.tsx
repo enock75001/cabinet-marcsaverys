@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { Scale } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title: 'Étude Notariale Maître Marc Saverys',
@@ -32,17 +31,14 @@ export default function RootLayout({
               <a href="/" className="hover:text-primary transition-colors">Accueil</a>
               <a href="/services" className="hover:text-primary transition-colors">Services</a>
               <a href="/about" className="hover:text-primary transition-colors">À propos</a>
-              <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+              <a href="/contact" className="hover:text-primary transition-colors">Contact</a>
             </nav>
-            <Button asChild className="hidden md:flex">
-              <a href="#contact">Prendre RDV</a>
-            </Button>
           </div>
         </header>
         
         <main className="flex-1">{children}</main>
 
-        <footer id="contact" className="bg-secondary text-secondary-foreground border-t border-border/40">
+        <footer id="contact-footer" className="bg-secondary text-secondary-foreground border-t border-border/40">
           <div className="container mx-auto grid gap-8 px-4 py-12 md:grid-cols-2 md:px-6 lg:grid-cols-4">
             <div className="col-span-2 space-y-2">
               <a href="/" className="flex items-center gap-3">

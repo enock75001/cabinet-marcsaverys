@@ -68,7 +68,7 @@ export default function HomePage() {
                     <a href="/services">Découvrir nos services</a>
                   </Button>
                   <Button size="lg" variant="secondary" asChild>
-                     <a href="#contact">Nous Contacter</a>
+                     <a href="/contact">Nous Contacter</a>
                   </Button>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default function HomePage() {
               Contactez-nous pour une consultation confidentielle et découvrez comment nous pouvons vous aider.
              </p>
              <Button size="lg" variant="secondary" className="mt-8" asChild>
-              <a href="#contact">Prendre un rendez-vous</a>
+              <a href="/contact">Prendre un rendez-vous</a>
              </Button>
           </div>
         </section>
